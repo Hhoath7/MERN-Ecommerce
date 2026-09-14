@@ -22,7 +22,7 @@ graph TD
     UI -->|HTTP Requests| API
     API -->|Queries| DB[(MongoDB Atlas)]
     
-    style SQA fill:#f9f,stroke:#333,stroke-width:2px
+    style SQA fill:#808080,stroke:#333,stroke-width:2px,color:#fff
     style DB fill:#4ea94b,stroke:#333,stroke-width:2px
 ```
 
