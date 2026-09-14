@@ -12,43 +12,41 @@ A full-stack e-commerce application engineered to demonstrate a complete Softwar
 ## 🏗️ Testing Architecture
 
 ```mermaid
-graph TD;
-    SQA[SQA Engineer] -->|UI Automation| Selenium[Selenium & PyTest];
-    SQA -->|API Validation| Postman[Postman & JavaScript];
+graph TD
+    SQA[SQA Engineer] -->|UI Automation| Selenium[Selenium & PyTest]
+    SQA -->|API Validation| Postman[Postman & JavaScript]
     
-    Selenium -->|Simulates User| UI[React.js Frontend];
-    Postman -->|Validates Endpoints| API[Express.js Backend];
+    Selenium -->|Simulates User| UI[React.js Frontend]
+    Postman -->|Validates Endpoints| API[Express.js Backend]
     
-    UI -->|HTTP Requests| API;
-    API -->|Queries| DB[(MongoDB Atlas)];
+    UI -->|HTTP Requests| API
+    API -->|Queries| DB[(MongoDB Atlas)]
     
     style SQA fill:#f9f,stroke:#333,stroke-width:2px
     style DB fill:#4ea94b,stroke:#333,stroke-width:2px
-    Testing Scope & Implementations
-Functional UI Automation: Engineered PyTest and Selenium WebDriver scripts to validate the end-to-end shopping cart checkout process and dynamic price calculations.
+```
 
-API Validation: Developed Postman collections with Chai assertions to verify endpoint data structures, array lengths, and HTTP status codes.
+## 🎯 Testing Scope & Implementations
 
-Negative & Edge Case Testing: Intentionally injected invalid requests to validate graceful error handling and 404 Not Found server responses.
+* **Functional UI Automation:** Engineered PyTest and Selenium WebDriver scripts to validate the end-to-end shopping cart checkout process and dynamic price calculations.
+* **API Validation:** Developed Postman collections with Chai assertions to verify endpoint data structures, array lengths, and HTTP status codes.
+* **Negative & Edge Case Testing:** Intentionally injected invalid requests to validate graceful error handling and `404 Not Found` server responses.
+* **Performance Profiling:** Monitored baseline database retrieval times, identifying and documenting cold-start latency issues.
 
-Performance Profiling: Monitored baseline database retrieval times, identifying and documenting cold-start latency issues.
+## 📦 Project Deliverables
+* `My Collection.postman_collection.json`: Exported automated API test suite.
+* `test_checkout.py`: Python/Selenium functional test script.
+* `SQA_Bug_Report_Performance.pdf`: Formal defect documentation logged during API analysis.
 
-📦 Project Deliverables
-My Collection.postman_collection.json: Exported automated API test suite.
+## 🚀 Quick Start Guide
 
-test_checkout.py: Python/Selenium functional test script.
+### 1. Launch the Environment
+* **Backend:** `cd server` -> `npm install` -> `node server.js`
+* **Frontend:** `cd client` -> `npm install` -> `npm start`
 
-SQA_Bug_Report_Performance.pdf: Formal defect documentation logged during API analysis.
+### 2. Execute the Test Suites
+* **UI Tests:** `cd selenium-tests` -> `pytest test_checkout.py -s`
+* **API Tests:** Import the `.json` collection into the Postman Desktop App and execute the runner.
 
-🚀 Quick Start Guide
-1. Launch the Environment
-Backend: cd server -> npm install -> node server.js
-
-Frontend: cd client -> npm install -> npm start
-
-2. Execute the Test Suites
-UI Tests: cd selenium-tests -> pytest test_checkout.py -s
-
-API Tests: Import the .json collection into the Postman Desktop App and execute the runner.
-
-Author: Hafsa Hoath | Software Engineer
+---
+**Author:** Hafsa Hoath | Software Engineer
